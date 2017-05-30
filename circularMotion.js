@@ -36,7 +36,6 @@ function Star(){
   this.r = width/2 * random(.4, .97);
   this.radius = random(10, 30);
   this.theta = 0;
-  //this.theta_vel = -(random(5,12) / this.r);
   this.theta_vel = -((this.radius/3) / this.r);
   this.x = -(this.r * cos(this.theta));
   this.y = (this.r * sin(this.theta));
