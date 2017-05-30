@@ -17,8 +17,7 @@ function setup() {
 
 function draw() { 
   background(0);
-  translate(width, height);
-  //ellipse(10, 10, 10, 10);
+  translate(width/2, height);
   starOne.move();
   starOne.display();
   starTwo.move();
@@ -29,16 +28,18 @@ function draw() {
   starFour.display();
   starFive.move();
   starFive.display();
+  fill(252, 212, 64);
+  ellipse(0, 0, 300, 300)
 }
 
 function Star(){
-  this.r = height * random(.5, 2.3);
+  this.r = width/2 * random(.4, .97);
+  this.radius = random(10, 30);
   this.theta = 0;
-  //this.theta_vel = -.005;
-  this.theta_vel = -(10 / this.r);
+  //this.theta_vel = -(random(5,12) / this.r);
+  this.theta_vel = -((this.radius/3) / this.r);
   this.x = -(this.r * cos(this.theta));
   this.y = (this.r * sin(this.theta));
-  this.radius = random(30, 50);
   
   this.move = function(){
     this.theta += this.theta_vel;
